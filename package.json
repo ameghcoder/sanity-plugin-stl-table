@@ -1,0 +1,63 @@
+{
+    "name": "sanity-plugin-stl-table",
+    "version": "0.1.0",
+    "description": "Sanity Studio plugin for creating Advance table with Structured Table Language (STL).",
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/ameghcoder/sanity-plugin-stl-table/blob/main/LICENSE"
+        }
+    ],
+    "author": {
+        "name": "Yashraj Yadav",
+        "url": "https://github.com/ameghcoder"
+    },
+    "keywords": [
+        "sanity studio",
+        "sanity table plugin",
+        "sanity tables",
+        "advance tables in sanity",
+        "stl table plugin"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ameghcoder/sanity-plugin-stl-table"
+    },
+    "bugs": {
+        "url": "https://github.com/ameghcoder/sanity-plugin-stl-table/issues"
+    },
+    "homepage": "https://github.com/ameghcoder/sanity-plugin-stl-table",
+    "type": "module",
+    "main": "dist/index.cjs",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs",
+            "types": "./dist/index.d.ts"
+        },
+        "./package.json": "./package.json"
+    },
+    "files": [
+        "dist",
+        "src"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "prepublishOnly": "npm run build"
+    },
+    "peerDependencies": {
+        "@sanity/ui": "^2.0.0 || ^3.0.0",
+        "react": ">=18",
+        "sanity": "^3.0.0 || ^4.0.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.0",
+        "sanity": "^4.21.1",
+        "typescript": "^5.4.0"
+    },
+    "dependencies": {
+        "structured-table": "^0.1.1"
+    }
+}
