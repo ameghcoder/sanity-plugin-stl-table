@@ -65,7 +65,7 @@ export default defineConfig({
 })
 ```
 
-## 🚀 How to Use
+## 🚀 Sanity Studio Implementation
 
 ### 1. Register the Schema
 
@@ -127,6 +127,22 @@ export default {
   ],
 }
 ```
+
+### 3. Studio Usage
+
+Restart your Sanity dev server. You will now see an input field where you can paste or write your `STL` code.
+
+Check following video to Learn how to use block inside Sanity Studio.
+
+[![How to use block inside Sanity Studio](https://img.youtube.com/vi/IVxWN7TVP2I/maxresdefault.jpg)](https://www.youtube.com/watch?v=IVxWN7TVP2I)
+
+The table preview will update automatically below user input as you type, giving you immediate response on your table structure and content.
+
+If you need a visual editor to create complex tables, you can use our [Live Table Editor](https://stl-table.vercel.app/playground) to build your table primarily and then export the STL code to paste into Sanity.
+
+### 4. Create Table in STL Language
+
+You can use our interactive live table editor at [/playground](https://stl-table.vercel.app/playground) where you can create your entire table and then export that in the STL format.
 
 ## 💻 Frontend Implementation
 
