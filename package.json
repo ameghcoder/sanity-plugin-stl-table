@@ -1,6 +1,6 @@
 {
     "name": "sanity-plugin-stl-table",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Sanity Studio plugin for creating Advance table with Structured Table Language (STL).",
     "licenses": [
         {
