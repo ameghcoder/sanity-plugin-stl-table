@@ -25,7 +25,7 @@ yarn add sanity-plugin-stl-table
 pnpm add sanity-plugin-stl-table
 ```
 
-> **Note**: This plugin requires `react` >= 18 and `sanity` >= 3.0.0.
+> **Note**: This plugin requires `react` >= 18 and `sanity` >= 3.0.0 (Supports Sanity v3, v4, and v5).
 
 ### 2. Setup Table Render Components (Required for Studio)
 
@@ -44,6 +44,7 @@ npx stl-cli add react
 ```
 
 **Optional:** You can specify a custom path for the components:
+
 ```bash
 npx stl-cli add react --path ./schemaTypes/components
 ```
@@ -171,11 +172,17 @@ const myPortableTextComponents = {
         _key: string;
         _type: string;
         stlString: string;
+        caption?: string;
       }
     }) => {
       // Parse the STL string
       const parsedSTL = STL.parse(value.stlString);
-      
+
+      // If a caption exists in Sanity, override the STL internal name/caption
+      if (value.caption) {
+        parsedSTL.caption = value.caption;
+      }
+
       // Render the table
       return <STLReact.Table data={parsedSTL} className='border' />
     }
@@ -188,12 +195,12 @@ const myPortableTextComponents = {
 
 ## 🛠 How it Works
 
-1.  **Data Storage**: The table data is stored as a string in the **Structured Table Language (STL)** format. This is a concise, human-readable format designed for table representation.
-2.  **Input Component**: When editing, the plugin provides a custom `TableInput` interface that allows you to input and edit the STL code directly, with immediate visual feedback.
-    *   It uses `TableInput` component to handle user interaction.
-    *   It saves the raw STL string + an optional caption.
-3.  **Preview**: Inside the Studio, a `TablePreview` component renders the STL string so editors can see exactly what the table looks like without leaving the CMS.
-4.  **Frontend Rendering**: On your frontend application (e.g., Next.js), you use the `structured-table` package to parse and render this STL string.
+1. **Data Storage**: The table data is stored as a string in the **Structured Table Language (STL)** format. This is a concise, human-readable format designed for table representation.
+2. **Input Component**: When editing, the plugin provides a custom `TableInput` interface that allows you to input and edit the STL code directly, with immediate visual feedback.
+   - It uses `TableInput` component to handle user interaction.
+   - It saves the raw STL string + an optional caption.
+3. **Preview**: Inside the Studio, a `TablePreview` component renders the STL string so editors can see exactly what the table looks like without leaving the CMS.
+4. **Frontend Rendering**: On your frontend application (e.g., Next.js), you use the `structured-table` package to parse and render this STL string.
 
 ## 💡 What is it used for?
 
