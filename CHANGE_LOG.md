@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.2.1] - 2026-02-24
 
 ### Added
 - **cellType attribute support** for semantic header/data cell rendering
@@ -18,14 +18,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Examples
 
 **Using cellType in body rows:**
-```stl
+
+```
 | Name {cellType=header} | Age | City |
 | John Doe | 30 | New York |
 | Jane Smith | 25 | Los Angeles |
 ```
 
 **Row headers in data tables:**
-```stl
+
+```
 [header]
 Category | Quarter 1 | Quarter 2 | Quarter 3
 
@@ -71,7 +73,7 @@ No breaking changes. The `cellType` attribute is optional and backward compatibl
 
 ### Example
 
-```stl
+```
 [header]
 Product {colSpan=2} | Price |
 
