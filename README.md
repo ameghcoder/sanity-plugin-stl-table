@@ -2,9 +2,13 @@
 
 A Sanity Studio plugin for creating advanced, structured tables using the **Structured Table Language (STL)**.
 
-![STL Banner](./asset/integration.webp "STL Banner")
+![STL Banner](https://raw.githubusercontent.com/ameghcoder/sanity-plugin-stl-table/refs/heads/main/asset/integration.webp "STL Banner")
 
 This plugin empowers your content creators to build complex tables with features like row/column spanning, headers, and rich styling, effectively overcoming the limitations of standard portable text tables.
+
+## 🆕 Updates/Changelog
+
+Check our change log file for version base update and more details about a specific version support [Check Change Log File](./CHANGE_LOG.md)
 
 ## ✨ Features
 
@@ -29,7 +33,7 @@ pnpm add sanity-plugin-stl-table
 
 ### 2. Setup Table Render Components (Required for Studio)
 
-To enable the interactive table preview within Sanity Studio, you need to install the CLI and generate the React components.
+To enable the interactive table preview within Sanity Studio, you need to install the CLI and add the React components using `structured-table-cli` package.
 
 First, install the CLI tool:
 
@@ -68,7 +72,7 @@ export default defineConfig({
 
 ## 🚀 Sanity Studio Implementation
 
-### 1. Register the Schema
+### 1. Import the Schema
 
 Import the `stlTableBlock` schema definition and add it to your Sanity Studio configuration `types` array.
 
@@ -135,15 +139,15 @@ Restart your Sanity dev server. You will now see an input field where you can pa
 
 Check following video to Learn how to use block inside Sanity Studio.
 
-[![How to use block inside Sanity Studio](https://img.youtube.com/vi/IVxWN7TVP2I/maxresdefault.jpg)](https://www.youtube.com/watch?v=IVxWN7TVP2I)
+[![How to use block inside Sanity Studio](https://img.youtube.com/vi/VDj2CrNHuTA/maxresdefault.jpg)](https://youtu.be/VDj2CrNHuTA)
 
 The table preview will update automatically below user input as you type, giving you immediate response on your table structure and content.
 
-If you need a visual editor to create complex tables, you can use our [Live Table Editor](https://stl-table.vercel.app/playground) to build your table primarily and then export the STL code to paste into Sanity.
-
 ### 4. Create Table in STL Language
 
-You can use our interactive live table editor at [/playground](https://stl-table.vercel.app/playground) where you can create your entire table and then export that in the STL format.
+You can use our interactive live table editor at [/playground](https://stl.fysk.dev/playground) where you can create your entire table and then export that in the STL format.
+
+Use this link if above link won't work - [STL Table Editor](https://stl-table.vercel.app/playground)
 
 ## 💻 Frontend Implementation
 
@@ -154,7 +158,14 @@ To render the structured tables on your frontend (e.g., Next.js, Remix), follow 
 Install the core package and the CLI (if you haven't already on the frontend repo), then generate the React components.
 
 ```bash
-npm install structured-table structured-table-cli && npx stl-cli add react
+npm install structured-table
+npm install structured-table-cli
+```
+
+Used to install React renderer in your project (for Vue project replace `react` to `vue`)
+
+```bash
+npx stl-cli add react
 ```
 
 ### 2. Render in Portable Text
